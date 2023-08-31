@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>exe 1</title>
+</head>
+<body>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .wrapper {
+        /*
+            - A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties
+            - `auto auto auto` means 3 item takes up one fraction of the available space
+            - initial 50px and repeat 6 times with one fraction of the available space
+        */
+        /*grid-template: auto / repeat(3, 1fr); */
+        /*grid-template-columns: auto auto auto;*/
+        display: grid;
+        grid-template: 50px / repeat(6, 1fr);
+        gap: 5px 5px;
+        padding: 10px;
+        background-color: cadetblue;
+    }
+    .grid-item {
+        background-color: coral;
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+    .wrapper2 {
+        display: grid;
+        grid-template: auto / repeat(6, 1fr);
+        padding: 10px;
+        background-color: cadetblue;
+    }
+    #child-1 {
+        /*child 1 start spanning from grid 1 end before grid 6*/
+        grid-column: 1 / 6;
+    }
+</style>
+<div class="wrapper">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>
+</div>
+<div class="wrapper2">
+    <div class="grid-item" id="child-1">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>
+</div>
+</body>
+</html>
