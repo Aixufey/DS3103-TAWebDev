@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <style>
+        /* By default the value is set to block */
+        h1 {
+            border: 1px solid black;
+        }
+
+        /* h&w is ignored with 'inline' */
+        h2 {
+            display: inline;
+            border: 1px solid black;
+            height: 10000000px;
+        }
+
+        h3 {
+            display: inline-block;
+            border: 1px solid red;
+            height: 50px;
+        }
+
+        .iblock {
+            width: 75px;
+            height: 75px;
+            display: inline-block;
+            color: whitesmoke;
+        }
+
+        .block {
+            display: block;
+            color: whitesmoke
+        }
+
+        .iblock1,
+        .block1 {
+            background-color: red;
+        }
+
+        .iblock2,
+        .block2 {
+            background-color: green;
+        }
+
+        .iblock3,
+        .block3 {
+            background-color: blue;
+        }
+
+        /* Floating */
+        header {
+            clear: both;
+            background-color: antiquewhite;
+        }
+
+        .picture {
+            height: 100px;
+            background-color: red;
+            border: 1px solid black;
+            /* display: inline-block; */
+            float: left;
+        }
+
+        footer {
+            background-color: antiquewhite;
+            clear: both;
+        }
+
+        /* CSS GRID */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* First row is 50px, second row 100px.. etc */
+            grid-template-rows: 50px 100px auto;
+            gap: 5px;
+            border: 1px solid navy;
+        }
+
+        .first {
+            grid-column: span 2;
+        }
+
+        .card {
+            background-color: burlywood;
+        }
+        /* Screen >= 768px has this styling */
+        @media (min-width: 768px) {
+            .card {
+                grid-column: span 2;
+            }
+        }
+
+        /* Flex */
+        .flex-container {
+            display: flex;
+            border: 1px solid black;
+        }
+        .fItem {
+            flex: 1;
+            border: 1px solid whitesmoke;
+            background-color: cornflowerblue;
+        }
+        .f1 {
+            flex: 2;
+        }
+        .f2 {
+            flex: 0.5;
+        }
+        /* Screen <= 768px has this particular style */
+        @media (max-width: 768px) {
+            .f1 {
+                flex: 4;
+            }
+        }
+    </style>
+
+    <!-- block vs inline vs inline-block -->
+    <h1>Block</h1>
+    <h2>in</h2>
+    <h2>line</h2>
+    <span>*span*</span>
+    <h3>inline-block</h3>
+
+    <hr>
+    <!-- inline-blocks -->
+    <div class="iblock iblock1">inline-block</div>
+    <div class="iblock iblock2">inline-block</div>
+    <div class="iblock iblock3">inline-block</div>
+
+    <hr>
+    <!-- blocks -->
+    <div class="block block1">block</div>
+    <div class="block block2">block</div>
+    <div class="block block3">block</div>
+
+    <hr>
+    <!-- Floating -->
+    <div style="border: 1px solid black;">
+        <header>header</header>
+        <div class="picture">Picture</div>
+        <p>Picture is set "float:left" of the content. Float property acts like a inline-block element.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolore minus eligendi sapiente a assumenda
+            repudiandae commodi expedita! Quas error libero enim aperiam, maxime ipsa hic rerum placeat eum quisquam.
+        </p>
+        <footer>Footer is set to "clear:left" to float to it's normal position</footer>
+    </div>
+
+    <hr>
+    <!-- CSS GRID -->
+    <span>GRID</span>
+    <div class="grid-container">
+        <div class="first card">"1fr 1fr" means splitting the content into two equal columns but this card is spanning
+            over two columns</div>
+        <div class="second card">100px</div>
+        <div class="card">100px</div>
+        <div class="card">auto</div>
+        <div class="card">auto</div>
+    </div>
+
+    <hr>
+    <!-- Flex -->
+    <span>FLEX</span>
+    <div class="flex-container">
+        <div class="f1 fItem">1: flex:2 twice amount of width ratio</div>
+        <div class="f2 fItem">2 flex:0.5 half of width ratio</div>
+        <div class="fItem">3 flex:1 ratio</div>
+        <div class="fItem">4 flex:1 ratio</div>
+    </div>
+
+    <hr>
+    
+</body>
+
+</html>

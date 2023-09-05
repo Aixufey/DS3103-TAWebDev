@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* DOM Root */
+:root {
+    /* https://flatuicolors.com/palette/es */
+    --hotstone: #aaa69d;
+    --liberty: #706fd3;
+    --black: #000000;
+}
+
+
+
+#wrapper {
+    position: relative;
+    height: 100vh;
+}
+
+/* Crucial to set template as column for responsiveness */
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    padding: 10px;
+    background-color: var(--hotstone);    
+
+    /* Center hack */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* Mobile */
+.grid-item {
+    grid-column: auto / span 12;
+    padding: 1rem;
+    background-color: var(--liberty);
+    border: 1px solid var(--black);
+    padding: 10px;
+    text-align: center;    
+    color: var(--black);
+}
+
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    .grid-item {
+        grid-column: span 6;
+    }
+}
+
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    .grid-item {
+        grid-column: span 4;
+    }
+}
