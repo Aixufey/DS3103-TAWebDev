@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+</head>
+<body>
+    <style>
+        p {
+            pad: 0;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        li, a {
+            list-style: none;
+            text-decoration: none;
+        }
+
+        /* display flex is inline 100% width */
+        /* Protip, setting a min-width of a container assure you items will never get squeezed out of content */
+        .container {
+            min-width: 100px;
+            padding: 10px;
+            background-color: gold;
+            border: 1px solid black;
+            gap: 1rem;
+
+
+            /* 
+            FLEX DIRECTION
+            WEB: Items will be layed out horizontal from left to right by default
+            APP: Items is vertical by default (REACT, IOS)
+            */
+        
+            display: flex;
+            /* Flex direction manipulates the MAIN axis, LEFT-RIGHT */ 
+            /* The CROSS axis is perpendicular to the main axis, TOP-BOTTOM */
+            flex-direction: row;
+
+            /* nowrap is default */
+            flex-wrap: wrap;
+
+            /* Justify-Content distributes on MAIN axis */
+            justify-content: space-around;
+
+            /* 
+                align-items distributes on CROSS axis 
+                This only works if there is enough height/width
+                *Try disable vh to see the difference*
+            */
+            height: 50vh;
+            align-items: center;
+
+            /* 
+            aligning content only works if wrap is active.
+            This will align the content when it is being wrapped to the next line.
+
+            *overrides any self alignments*
+            */
+            align-content: space-evenly;
+        }
+        /* 
+            Flex-basis is setting width on ROW direction & height on COLUMN direction 
+            It is direction specific.
+        */
+        .container > * {
+            flex-basis: 150px;
+            border: 1px dashed rgb(255, 0, 0);
+        }
+        
+        /* Higher number is displaced to the most right */
+        .container > p {
+            order: 0;
+            /* aligning itself independent */
+            align-self: flex-start; 
+        }
+        .order-1 {
+            order: 20;
+        }
+        .order-2 {
+            order:10;
+        }
+        .order-3 {
+            order: 5;
+        }
+        .order-4 {
+            order: 15;
+        }
+        
+        .order {
+            /* Size has specificity
+            content < width < flex-basis < min-width < max-width
+            Because we used flex-basis over, the width has no effect.
+            Even though flex-basis is at 150px, it will be overriden by max-width
+            that can grow only up to 100px
+            */
+            width: 2000px;
+            /* max-width: 100px; */
+
+            /*
+                Best way to understand grow and shrink behavior inline-size:
+                grow -> Starting frow flex-basis size then expand until max-width is reached.
+                shrink -> reduce the space until you hit the content size limit, which is min-width.
+
+                shorthand is flex: grow shrink basis -> flex: 1 1 0;
+                or switch everything on at once -> flex: 1
+            */
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex: 1;
+        }
+
+    </style>
+    <div class="container">
+        <p class="order">Flex layout</p>
+        <li class="order-1 order"><a href="#">google</a></li>
+        <li class="order-2 order"><a href="#">facebook</a></li>
+        <li class="order-3 order"><a href="#">instagram</a></li>
+        <li class="order-4 order"><a href="#">microsoft</a></li>
+    </div>
+</body>
+</html>

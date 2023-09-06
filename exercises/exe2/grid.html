@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            background-color: gold;
+            min-width: 800px;
+            height: 70vh;
+
+            display: grid;
+            /* Fraction ratio:
+                Column: 1fr 2fr = 1:2 e.g. Setting two columns of 100px:200px 
+                Row: 1fr 1fr = 1:1 e.g. Setting two rows of 100px:100px equal height
+
+                minmax(100px, 200px) maintain minimum 100px and max 200px values for one fraction
+                shorthand repeat(3, 1fr) = 1fr 1fr 1fr
+            */
+            /* grid-template-columns: 1fr 1fr minmax(100px, 200px); */
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .container > p {
+            border: 1px solid black;
+            flex: 1;
+        }
+
+
+        /* GRID + FLEX = 👍 */
+        .grid-container {
+            height: 100vh;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr 1fr 1.5fr;
+            grid-template-rows: repeat(2, 1fr);
+            
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .grid-item {
+            text-align: center;
+            font-size: 5rem;
+            color: 'white';
+            background-color: blueviolet;
+
+            /* Each grid item is now a container with FLEX rules. */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+        .flower {
+            background-color: violet;
+            grid-column: span 2;
+
+            /* LoL way for spanning across the given fractions(1fr)*/
+            /* grid-column-start: 1;
+            grid-column-end: -1; */
+        }
+        .doll {
+            grid-column: span ;
+        }
+    </style>
+
+    <div class="container">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+    </div>
+
+    <hr>
+
+    <div class="grid-container">
+        <div class="grid-item flower">💮</div>
+        <div class="grid-item cake">🎂</div>
+        <div class="grid-item doll">🪆</div>
+        <p id="print"></p>
+    </div>
+
+    <script>
+        const name = document
+        .firstElementChild
+        .lastElementChild
+        .firstElementChild
+        .nextElementSibling
+        .appendChild(document.createElement('input'))
+    </script>
+</body>
+
+</html>
