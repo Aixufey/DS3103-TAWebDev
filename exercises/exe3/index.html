@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            margin: 10px;
+        }
+    </style>
+    <article class="container">
+        <label for="input1">Number 1: </label>
+        <input id="input1" name="input1" type="text">
+        <label for="input2">Number 2: </label>
+        <input id="input2" name="input2" type="text">
+        <input id="addBtn" type="button" value="Addition">
+        <input id="testBtn" type="button" value="jQuery">
+        <p id="output"></p>
+    </article>
+    <script>
+        const output = document.querySelector('#output');
+        const addBtn = document.querySelector('#addBtn');
+        const testBtn = document.querySelector('#testBtn');
+        const input1 = parseInt(document.querySelector('#input1').value);
+        const input2 = parseInt(document.querySelector('#input2').value);
+
+        const addition = () => {
+            if (input1 && input2) {
+                output.innerHTML = `${input1} + ${input2} = ${input1 + input2}`
+            }
+        }
+
+
+        $(document).ready(function () {
+            $('#testBtn').click(function () {
+                alert('testBtn clicked')
+            })
+        })
+
+
+        addBtn.addEventListener('click', addition);
+    </script>
+</body>
+
+</html>
