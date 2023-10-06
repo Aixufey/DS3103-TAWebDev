@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./services/MovieModuleService.js"></script>
+    <script type="module" src="./scripts/showMovies.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Movies</title>
+</head>
+
+<body>
+    <nav class="nav-container">
+        <section class="hero-container">
+            <h1>Movies database</h1>
+        </section>
+        <ul class="list-container">
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Search</a></li>
+        </ul>
+        <div class="dropdown-container">
+            <div class="icon-container">
+                <img src="./assets/hamburger.png" alt="dropdown">
+            </div>
+            <div class="dropdown-content">
+                <a href="#">Movies</a>
+                <a href="#">Search</a>
+            </div>
+        </div>
+    </nav>
+    <section class="middle-container">
+        <article class="movie-container"></article>
+    </section>
+</body>
+
+</html>

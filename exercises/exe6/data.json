@@ -1,0 +1,56 @@
+{
+    "data": {
+        "movies": [
+            {
+                "id": "1",
+                "title": "Batman",
+                "year": "1989"
+            },
+            {
+                "id": "2",
+                "title": "Batman Returns",
+                "year": "1992"
+            },
+            {
+                "id": "3",
+                "title": "Batman Forever",
+                "year": "1995"
+            },
+            {
+                "id": "4",
+                "title": "Batman & Robin",
+                "year": "1997"
+            },
+            {
+                "id": "5",
+                "title": "Batman Begins",
+                "year": "2005"
+            },
+            {
+                "id": "6",
+                "title": "The Dark Knight",
+                "year": "2008"
+            },
+            {
+                "id": "7",
+                "title": "The Dark Knight Rises",
+                "year": "2012"
+            },
+            {
+                "id": "8",
+                "title": "Batman v Superman: Dawn of Justice",
+                "year": "2016"
+            },
+            {
+                "id": "9",
+                "title": "Justice League",
+                "year": "2017"
+            },
+            {
+                "id": "10",
+                "title": "The Batman",
+                "year": "2021"
+            }
+        ]
+    }
+}
