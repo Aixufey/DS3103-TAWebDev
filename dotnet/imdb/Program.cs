@@ -28,6 +28,12 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 app.UseCors("AllowAll");
 
+// Static files
+DefaultFilesOptions options = new DefaultFilesOptions();
+options.DefaultFileNames.Add("index.html");
+app.UseDefaultFiles(options);
+app.UseStaticFiles();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

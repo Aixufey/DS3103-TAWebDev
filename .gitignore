@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+.DS_Store
+### DotnetCore ###
+# .NET Core build folders
+bin/
+obj/
+
+# Common node modules locations
+/node_modules

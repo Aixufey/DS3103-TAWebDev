@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace imdb.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/[controller]")] // annotate the endpoint as api/Movie
 public class MovieController : ControllerBase
 {
     private readonly MovieContext context;
@@ -32,7 +32,7 @@ public class MovieController : ControllerBase
         }
     };
 
-    [HttpGet("[action]")]
+    [HttpGet("[action]")] // api/Movie/GetAllMovies
     public async Task<ActionResult<List<Movie>>> GetAllMovies()
     {
         try
@@ -47,7 +47,7 @@ public class MovieController : ControllerBase
     }
 
     [HttpGet]
-    [Route("[action]/{id}")]
+    [Route("[action]/{id}")] // api/Movie/GetById/{id}
     public async Task<ActionResult<Movie>> GetById(int id)
     {
         Movie movie = await context.Movie.FindAsync(id);
@@ -62,8 +62,8 @@ public class MovieController : ControllerBase
     }
 
     [HttpPost]
-    [Route("[action]")]
-    public async Task< ActionResult > Post(Movie newMovie)
+    [Route("[action]")] // api/Movie/Post
+    public async Task< ActionResult > Post([FromBody] Movie newMovie)
     {
         try 
         {
