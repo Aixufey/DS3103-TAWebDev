@@ -9,4 +9,6 @@ public class MovieContext: DbContext
 
     // Create Entity in database as Movie
     public DbSet<Movie> Movie { get; set; }
+    public DbSet<Actor> Actor { get; set; }
 }
+

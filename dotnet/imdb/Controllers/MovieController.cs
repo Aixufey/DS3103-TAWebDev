@@ -78,5 +78,29 @@ public class MovieController : ControllerBase
         }
     }
 
+
+
+    private readonly List<Actor> actors = new List<Actor>
+    {
+        new Actor {
+            Id = 1000,
+            Name = "Christian Bale",
+            Age = "45"
+        }
+    };
+    [HttpGet]
+    [Route("[action]")]
+    public async Task<ActionResult<List<Actor>>> GetAllActors()
+    {
+        try
+        {
+            
+            return Ok(actors);
+        }
+        catch
+        {
+            return StatusCode(500);
+        }
+    }
     
 }
